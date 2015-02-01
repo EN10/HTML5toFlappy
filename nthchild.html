@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+tr:nth-child(odd)  { color: red; }
+tr:nth-child(even) { color: blue; }
+</style>
+</head>
+<body>
+<div>
+<button onclick="Add()">+</button> New Row
+</div>
+<table id="tbl">
+</table>
+<script>
+var id = 0;
+
+function Add() {
+    var parent = document.getElementById("tbl");
+    var newElement = document.createElement("tr");
+    newElement.setAttribute('id', id);
+    var html = "<td>line: "+id;    // easier to read
+    html += " <button onclick='Remove("+id+")'>-</button> </td>";
+    newElement.innerHTML = html;
+    parent.appendChild(newElement);
+    id ++;
+}
+
+function Remove(x) {
+var child = document.getElementById(x);
+child.parentNode.removeChild(child);  
+}
+</script>
+
+</body>
+</html>

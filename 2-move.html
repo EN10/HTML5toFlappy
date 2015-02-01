@@ -1,0 +1,16 @@
+<canvas id="draw">
+<script>
+var g = document.getElementById("draw").getContext("2d");
+var x = 300;
+setInterval(tick,10);
+
+function tick(){
+g.fillStyle = "skyblue";
+g.fillRect(0,0,300,150);
+if (x === -25) x=300;
+x=x-1;
+g.fillStyle = "green";
+g.fillRect(x,0,25,75);
+g.fillRect(x,100,25,50);
+}
+</script>

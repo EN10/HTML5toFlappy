@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div>
+<button onclick="Add()">+</button> New Note
+</div>
+
+<div id="notes">
+</div>
+<script>
+var id = 0;
+
+function Add() {
+    var parent = document.getElementById("notes");
+    var newElement = document.createElement("p");
+    newElement.setAttribute('id', id);
+    newElement.innerHTML = "<input> <button onclick='Remove("+id+")'>-</button>";
+    parent.appendChild(newElement);
+    id ++;
+}
+
+function Remove(x) {
+var child = document.getElementById(x);
+child.parentNode.removeChild(child);  
+}
+</script>
+
+</body>
+</html>

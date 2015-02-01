@@ -1,0 +1,27 @@
+<canvas id="draw">
+<script>
+var g = document.getElementById("draw").getContext("2d");
+var x = 300;    var y = 50;    var r = 75;
+setInterval(draw,10);
+setInterval(fall,30);
+window.onclick = flap;
+
+function fall() { y=y+1;  }
+function flap() { y=y-15; }
+
+function draw(){
+    g.fillStyle = "skyblue";
+    g.fillRect(0,0,300,150);
+    if (x === -25) 
+    {   r = Math.random()*100;
+        x = 300;
+    }
+    x=x-1;
+    g.fillStyle = "green";
+    g.fillRect(x,0,25,r);
+    g.fillRect(x,r+40,25,150-r+40);
+    var bird = new Image();
+    bird.src = "http://i60.tinypic.com/335b72e.png";
+    g.drawImage(bird,50,y);
+}
+</script>

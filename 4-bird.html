@@ -1,0 +1,19 @@
+<canvas id="draw">
+<script>
+var g = document.getElementById("draw").getContext("2d");
+var y = 50;
+setInterval(draw,50);
+window.onclick = flap;
+
+function flap()
+{ y=y-10; }
+
+function draw(){
+g.fillStyle = "skyblue";
+g.fillRect(0,0,300,150);
+y=y+1;
+var bird = new Image();
+bird.src = "http://i60.tinypic.com/335b72e.png";
+g.drawImage(bird,50,y);
+}
+</script>
